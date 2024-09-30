@@ -1,1 +1,22 @@
  /* Ignacio Hovan Rojas UO295341*/
+
+ /*Especificidad 001*/
+ body{
+    font-family: Arial, sans-serif;
+    background-color: #B4F5F0;
+    color: #041F60;
+ }
+
+ /*Especificidad 001*/
+ header{
+    background-color: #2CEEF0;
+}
+ /*Especificidad 001*/
+h1{
+    color: #0476D0;
+}
+ /*Especificidad 001*/
+nav{
+    color: #0476D0;
+}
+
