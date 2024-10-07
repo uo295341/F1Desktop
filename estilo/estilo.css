@@ -83,13 +83,15 @@ table {
     border: 3px solid #000000;
     text-align:center;
   }
-
+ /*Especificidad 001*/
 thead {
     border: 3px solid #000000;
 }
+ /*Especificidad 001*/
 th {
     border: 3px solid #000000;
 }
+ /*Especificidad 001*/
 td {
     border: 3px solid #000000;
 }
