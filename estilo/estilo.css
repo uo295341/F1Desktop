@@ -82,7 +82,8 @@ table {
     border-collapse: collapse;
     text-align:center;
     
-  }
+}
+/*Especificidad 001*/
 caption{
     border-collapse: collapse;
     border: 0.3em solid #000000;
@@ -104,15 +105,27 @@ td {
 
 /*Especificidad 001*/
 video {
-    width:100%;
+    width:75%;
     height:auto;
 }
 /*Especificidad 001*/
 img {
-    width: 100%;
+    width: 75%;
     height: auto;
  }
 /*Especificidad 001*/
 audio{
-    width: 100%;
+    width: 50%;
+}
+/*Especificidad 010*/
+.active{
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+@media screen and (max-width: 500px) {
+    /*Especificidad 010*/
+    body>p {
+        display: none;
+    }
 }
