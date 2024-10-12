@@ -24,7 +24,7 @@ nav{
 }
  /*Especificidad 002*/
 body>p {
-    font-size: 12px;
+    font-size: 1em;
 }
  /*Especificidad 002*/
 main a{
@@ -42,7 +42,7 @@ header a{
 
  /*Especificidad 001*/
 ol{
-    font-size: 16px;
+    font-size: 1em;
     list-style-type: lower-roman;
 }
  /*Especificidad 002*/
@@ -53,12 +53,12 @@ li::marker {
 }
  /*Especificidad 001*/
 ul{
-    font-size: 15px;
+    font-size: 1em;
     
 }
  /*Especificidad 002*/
 ul ul{
-    font-size: 14px;
+    font-size: 0.7em;
 }
 /*Especificidad 001*/
 dl{
@@ -67,12 +67,12 @@ dl{
 }
 /*Especificidad 001*/
 dt{
-    font-size: 18px;
-    font-weight: bold; 
+    font-size: 1em;
+    font-weight: bold;  
 }
 /*Especificidad 001*/
 dd{
-    font-size: 14px;
+    font-size: 0.7em;
 }
 
 /*Especificidad 001*/
@@ -80,18 +80,22 @@ table {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-    border: 3px solid #000000;
+    border: 0.3em solid #000000;
     text-align:center;
+    
   }
  /*Especificidad 001*/
 thead {
-    border: 3px solid #000000;
+    border: 0.3em solid #000000;
+    border-collapse: collapse;
 }
  /*Especificidad 001*/
 th {
-    border: 3px solid #000000;
+    border: 0.3em solid #000000;
+    border-collapse: collapse;
 }
  /*Especificidad 001*/
 td {
-    border: 3px solid #000000;
+    border: 0.3em solid #000000;
+    border-collapse: collapse;
 }
