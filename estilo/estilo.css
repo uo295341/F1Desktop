@@ -24,7 +24,7 @@ nav{
 }
  /*Especificidad 002*/
 body>p {
-    font-size: 1em;
+    font-size: 0.5em;
 }
  /*Especificidad 002*/
 main a{
@@ -77,25 +77,42 @@ dd{
 
 /*Especificidad 001*/
 table {
-    table-layout: fixed;
+    table-layout: auto;
     width: 100%;
     border-collapse: collapse;
-    border: 0.3em solid #000000;
     text-align:center;
     
   }
- /*Especificidad 001*/
-thead {
-    border: 0.3em solid #000000;
+caption{
     border-collapse: collapse;
-}
+    border: 0.3em solid #000000;
+    text-align:center;
+  }
+
  /*Especificidad 001*/
 th {
+    width: 10%;
     border: 0.3em solid #000000;
-    border-collapse: collapse;
+
 }
  /*Especificidad 001*/
 td {
+    width: 10%;
     border: 0.3em solid #000000;
-    border-collapse: collapse;
+
+}
+
+/*Especificidad 001*/
+video {
+    width:100%;
+    height:auto;
+}
+/*Especificidad 001*/
+img {
+    width: 100%;
+    height: auto;
+ }
+/*Especificidad 001*/
+audio{
+    width: 100%;
 }
