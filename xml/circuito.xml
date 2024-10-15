@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE circuitos SYSTEM "circuito.dtd">
+<circuitos>
+    <circuito nombre="Las Vegas Strip Circuit">
+        <fecha>23 de noviembre</fecha>
+        <longitud unidad="metros">6201</longitud>
+        <anchura unidad="metros">10</anchura>
+        <vueltas>50</vueltas>
+        <localidad>Las Vegas</localidad>
+        <pais>Estados Unidos</pais>
+        <bibliografia>
+            <url>https://www.formula1.com/en/racing/2024/las-vegas/circuit</url>
+            <url>https://www.mclaren.com/racing/formula-1/2024/las-vegas-grand-prix/</url>
+            <url>https://www.redbull.com/es-es/circuito-las-vegas-f1-guia</url>
+        </bibliografia>
+        <multimedia>
+            <imagenes>
+                <imagen>LayoutTrack.wepm</imagen>
+                <imagen>Panoramica.jpg</imagen>
+                <imagen>Salida.jpg</imagen>
+            </imagenes>
+            <videos>
+                <video>RaceHighLight.mp4</video>
+            </videos>
+        </multimedia>
+        <coordenadas>
+            <centro longitud="-115.176468º" latitud="36.188110°">
+                <altitud unidad="metros">611</altitud>
+            </centro>
+            <puntos>
+                <longitudTramo unidad="metros">800</longitudTramo>
+                <puntoFinal longitud="-115.176458º" latitud="36.188100°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>4</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">800</longitudTramo>
+                <puntoFinal longitud="-115.176458º" latitud="36.188100°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>4</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">800</longitudTramo>
+                <puntoFinal longitud="-115.176458º" latitud="36.188100°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>4</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">800</longitudTramo>
+                <puntoFinal longitud="-115.176458º" latitud="36.188100°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>4</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">800</longitudTramo>
+                <puntoFinal longitud="-115.176458º" latitud="36.188100°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>4</numero>
+            </puntos>
+        </coordenadas>
+    </circuito>
+</circuitos>

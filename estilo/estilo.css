@@ -77,7 +77,6 @@ dd{
 
 /*Especificidad 001*/
 table {
-    table-layout: auto;
     width: 100%;
     border-collapse: collapse;
     text-align:center;
@@ -87,6 +86,7 @@ table {
 caption{
     border-collapse: collapse;
     border: 0.3em solid #000000;
+    border-bottom: 0em;
     text-align:center;
   }
 

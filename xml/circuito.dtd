@@ -1,0 +1,41 @@
+<!ELEMENT circuitos (circuito)>
+<!ELEMENT circuito (fecha, longitud, anchura, vueltas, localidad, pais, bibliografia, multimedia, coordenadas)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT longitud (#PCDATA)>
+<!ELEMENT anchura (#PCDATA)>
+<!ELEMENT vueltas (#PCDATA)>
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!ELEMENT bibliografia (url+)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT multimedia (imagenes, videos)>
+<!ELEMENT imagenes (imagen+)>
+<!ELEMENT imagen (#PCDATA)>
+<!ELEMENT videos (video*)>
+<!ELEMENT video (#PCDATA)>
+<!ELEMENT coordenadas (centro, puntos+)>
+<!ELEMENT centro (altitud)>
+<!ELEMENT altitud (#PCDATA)>
+<!ELEMENT puntos (longitudTramo, puntoFinal, numero)>
+<!ELEMENT longitudTramo (#PCDATA)>
+<!ELEMENT puntoFinal (altitudPunto)>
+<!ELEMENT altitudPunto (#PCDATA)>
+<!ELEMENT numero (#PCDATA)>
+<!ATTLIST circuito
+	nombre CDATA #REQUIRED>
+ <!ATTLIST anchura
+	unidad CDATA #REQUIRED>
+<!ATTLIST longitud
+	unidad CDATA #REQUIRED>
+<!ATTLIST altitud
+	unidad CDATA #REQUIRED>
+<!ATTLIST centro
+	longitud CDATA #REQUIRED
+    latitud CDATA #REQUIRED>
+<!ATTLIST puntoFinal
+	longitud CDATA #REQUIRED
+    latitud CDATA #REQUIRED>
+<!ATTLIST longitudTramo
+	unidad CDATA #REQUIRED>
+<!ATTLIST altitudPunto
+	unidad CDATA #REQUIRED>
