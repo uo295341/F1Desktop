@@ -15,7 +15,7 @@
         </bibliografia>
         <multimedia>
             <imagenes>
-                <imagen>LayoutTrack.wepm</imagen>
+                <imagen>LayoutTrack.jpg</imagen>
                 <imagen>Panoramica.jpg</imagen>
                 <imagen>Salida.jpg</imagen>
             </imagenes>
@@ -28,39 +28,137 @@
                 <altitud unidad="metros">611</altitud>
             </centro>
             <puntos>
-                <longitudTramo unidad="metros">800</longitudTramo>
-                <puntoFinal longitud="-115.176458º" latitud="36.188100°">
+                <longitudTramo unidad="metros">236</longitudTramo>
+                <puntoFinal longitud="-115.162219º" latitud="36.109017°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>1</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">25</longitudTramo>
+                <puntoFinal longitud="-115.160217º" latitud="36.110399°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>2</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">92</longitudTramo>
+                <puntoFinal longitud="-115.160459º" latitud="36.110517°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>3</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">199</longitudTramo>
+                <puntoFinal longitud="-115.161489º" latitud="36.110472º">
                     <altitudPunto unidad="metros">611</altitudPunto>
                 </puntoFinal>
                 <numero>4</numero>
             </puntos>
             <puntos>
-                <longitudTramo unidad="metros">800</longitudTramo>
-                <puntoFinal longitud="-115.176458º" latitud="36.188100°">
+                <longitudTramo unidad="metros">67</longitudTramo>
+                <puntoFinal longitud="-115.163698º" latitud="36.110252°">
                     <altitudPunto unidad="metros">611</altitudPunto>
                 </puntoFinal>
-                <numero>4</numero>
+                <numero>5</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">927</longitudTramo>
+                <puntoFinal longitud="-115.163981º" latitud="36.110815°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>6</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">17</longitudTramo>
+                <puntoFinal longitud="-115.164023º" latitud="36.119152°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>7</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">356</longitudTramo>
+                <puntoFinal longitud="-115.163838º" latitud="36.119190°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>8</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">40</longitudTramo>
+                <puntoFinal longitud="-115.160557º" latitud="36.120991°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>9</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">103</longitudTramo>
+                <puntoFinal longitud="-115.160853º" latitud="36.121263°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>10</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">302</longitudTramo>
+                <puntoFinal longitud="-115.160735º" latitud="36.122189°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>11</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">248</longitudTramo>
+                <puntoFinal longitud="-115.164089º" latitud="36.122386°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>12</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">237</longitudTramo>
+                <puntoFinal longitud="-115.166411º" latitud="36.123607°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>13</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">536</longitudTramo>
+                <puntoFinal longitud="-115.168065º" latitud="36.125279°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>14</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">390</longitudTramo>
+                <puntoFinal longitud="-115.171849º" latitud="36.121548°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>15</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">382</longitudTramo>
+                <puntoFinal longitud="-115.172890º" latitud="36.117356°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>16</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">694</longitudTramo>
+                <puntoFinal longitud="-115.173015º" latitud="36.108714°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>17</numero>
+            </puntos>
+            <puntos>
+                <longitudTramo unidad="metros">74</longitudTramo>
+                <puntoFinal longitud="-115.172383º" latitud="36.108448°">
+                    <altitudPunto unidad="metros">611</altitudPunto>
+                </puntoFinal>
+                <numero>18</numero>
             </puntos>
             <puntos>
                 <longitudTramo unidad="metros">800</longitudTramo>
-                <puntoFinal longitud="-115.176458º" latitud="36.188100°">
+                <puntoFinal longitud="-115.171730º" latitud="36.108038°">
                     <altitudPunto unidad="metros">611</altitudPunto>
                 </puntoFinal>
-                <numero>4</numero>
-            </puntos>
-            <puntos>
-                <longitudTramo unidad="metros">800</longitudTramo>
-                <puntoFinal longitud="-115.176458º" latitud="36.188100°">
-                    <altitudPunto unidad="metros">611</altitudPunto>
-                </puntoFinal>
-                <numero>4</numero>
-            </puntos>
-            <puntos>
-                <longitudTramo unidad="metros">800</longitudTramo>
-                <puntoFinal longitud="-115.176458º" latitud="36.188100°">
-                    <altitudPunto unidad="metros">611</altitudPunto>
-                </puntoFinal>
-                <numero>4</numero>
+                <numero>19</numero>
             </puntos>
         </coordenadas>
     </circuito>
