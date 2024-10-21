@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.uniovi.es" elementFormDefault="qualified" targetNamespace="http://www.uniovi.es" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="circuitos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="circuito" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="circuito">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="fecha" />
+				<xs:element ref="hora" />
+				<xs:element ref="largo" />
+				<xs:element ref="anchura" />
+				<xs:element ref="vueltas" />
+				<xs:element ref="localidad" />
+				<xs:element ref="pais" />
+				<xs:element ref="bibliografia" />
+				<xs:element ref="multimedia" />
+				<xs:element ref="coordenadas" />
+			</xs:sequence>
+			<xs:attribute name="nombre" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="fecha" type="xs:date" />
+	<xs:element name="hora" type="xs:time" />
+	<xs:element name="largo">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:integer">
+					<xs:attribute name="unidad" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="anchura">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:integer">
+					<xs:attribute name="unidad" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="vueltas" type="xs:integer" />
+	<xs:element name="localidad" type="xs:string" />
+	<xs:element name="pais" type="xs:string" />
+	<xs:element name="bibliografia">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="3" ref="url" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="url" type="xs:string" />
+	<xs:element name="multimedia">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="imagenes" />
+				<xs:element ref="videos" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="imagenes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="5" ref="imagen" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="imagen" type="xs:string" />
+	<xs:element name="videos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="3" ref="video" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="video" type="xs:string" />
+	<xs:element name="coordenadas">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="centro" />
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="puntos" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="centro">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="altitud" />
+				<xs:element ref ="longitud"/>
+				<xs:element ref="latitud" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="altitud">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="altitud">
+					<xs:attribute name="unidad" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="longitud">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="longitud">
+					<xs:attribute name="unidad" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="latitud">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="latitud">
+					<xs:attribute name="unidad" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="puntos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="longitudTramo" />
+				<xs:element ref="puntoFinal" />
+				<xs:element ref="numero" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="longitudTramo">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:integer">
+					<xs:attribute name="unidad" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="puntoFinal">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="altitudPunto" />
+				<xs:element ref="longitudPunto" />
+				<xs:element ref="latitudPunto" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="altitudPunto">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="altitud">
+					<xs:attribute name="unidad" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="altitud">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="5000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="longitudPunto">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="longitud">
+					<xs:attribute name="unidad" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="longitud">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="-180"/>
+			<xs:maxInclusive value="180"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="latitudPunto">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="latitud">
+					<xs:attribute name="unidad" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="latitud">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="-90"/>
+			<xs:maxInclusive value="90"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="numero" type="xs:integer" />
+</xs:schema>
