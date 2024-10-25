@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document><Placemark><name>
+1 36.109017,-115.162219
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.162219,36.109017,637
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+2 36.110399,-115.160217
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.160217,36.110399,634
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+3 36.110517,-115.160459
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.160459,36.110517,631
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+4 36.110472,-115.161489
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.161489,36.110472,631
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+5 36.110252,-115.163698
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.163698,36.110252,639
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+6 36.110815,-115.163981
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.163981,36.110815,635
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+7 36.119152,-115.164023
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.164023,36.119152,641
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+8 36.119190,-115.163838
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.163838,36.119190,641
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+9 36.120991,-115.160557
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.160557,36.120991,637
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+10 36.121263,-115.160853
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.160853,36.121263,637
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+11 36.122189,-115.160735
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.160735,36.122189,637
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+12 36.122386,-115.164089
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.164089,36.122386,636
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+13 36.123607,-115.166411
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.166411,36.123607,640
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+14 36.125279,-115.168065
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.168065,36.125279,633
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+15 36.121548,-115.171849
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.171849,36.121548,646
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+16 36.117356,-115.172890
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.172890,36.117356,656
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+17 36.108714,-115.173015
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.173015,36.108714,647
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+18 36.108448,-115.172383
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.172383,36.108448,673
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+19 36.108038,-115.171730
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.171730,36.108038,650
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+20 36.108091,-115.163710
+</name><description>
+Las Vegas Track Point
+</description><Point><coordinates>
+-115.163710,36.108091,643
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><name>
+Las Vegas Track
+</name><Placemark><LineString><extrude>
+1
+</extrude><tessellation>
+1
+</tessellation><coordinates>
+-115.162219,36.109017,637
+-115.160217,36.110399,634
+-115.160459,36.110517,631
+-115.161489,36.110472,631
+-115.163698,36.110252,639
+-115.163981,36.110815,635
+-115.164023,36.119152,641
+-115.163838,36.119190,641
+-115.160557,36.120991,637
+-115.160853,36.121263,637
+-115.160735,36.122189,637
+-115.164089,36.122386,636
+-115.166411,36.123607,640
+-115.168065,36.125279,633
+-115.171849,36.121548,646
+-115.172890,36.117356,656
+-115.173015,36.108714,647
+-115.172383,36.108448,673
+-115.171730,36.108038,650
+-115.163710,36.108091,643
+-115.162219,36.109017,637
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></LineString><Style><LineStyle><color>
+#ff0000ff
+</color><width>
+5
+</width></LineStyle></Style></Placemark></Document></kml>
