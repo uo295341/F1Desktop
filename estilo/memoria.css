@@ -36,6 +36,7 @@ article img {
       position: absolute;
       border-radius: 5px;
       background: #1C7CCC;
+      color: #000000;
       backface-visibility: hidden;
 }
 /*Especificidad 002*/
