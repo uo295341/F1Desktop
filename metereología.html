@@ -8,12 +8,13 @@
     <meta name="description" content="pagina con la meteorología" />
     <meta name ="keywords" content ="meteorología, lluvia, temperatura, calor" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
-    
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/article_element.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico" />
-    
+    <script src="js/pais.js"></script>
     <title>Meteorología</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -35,8 +36,16 @@
     </p>
     <main>
         <h2>Meteorología</h2>
-        <script src="js/pais.js"></script>
+        <script>
+            var estadosUnidos = new Pais("Estados unidos", "Washington D.C.", "Las Vegas Strip Circuit", 331_449_281);
+            estadosUnidos.rellenarInformacion();
+            document.write("<p>"+estadosUnidos.getNombrePais+", " +estadosUnidos.getNombreCapital+"</p>")
+            document.write(estadosUnidos.getInfoSecundaria);
+            estadosUnidos.escribirCoordenadasLineMeta();
+            estadosUnidos.verForecast();
+        </script>
         
     </main>
+    <footer></footer>
 </body>
 </html>

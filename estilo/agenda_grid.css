@@ -1,0 +1,20 @@
+/*Especifidad 001*/
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    margin-top: 1em;
+    text-align: center;
+}
+ /*Especificidad 001*/
+article{
+    border: 0.2em solid #000000;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: #FFFFFF;
+}
+ /*Especificidad 001*/
+h2, button{
+    grid-column: 1 / -1;
+      text-align: center;
+}

@@ -5,22 +5,25 @@ body>main {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    flex: 1 0 21%
+    column-gap: 5vw;
+    row-gap: 5vw;
   }
 /*Especificidad 011*/
 main > *:first-child {
     flex-basis: 100%;
+    text-align: center;
   }
 /*Especificidad 001*/
 article {
-flex-basis: 20%;
-    height: 250px;
+    width: 20%;
+    height: 25vw;
     margin: 5px;
     transform: scale(1);
     cursor: pointer;
     transform-style: preserve-3d;
     transition: transform .5s;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    
 }
 /*Especificidad 011*/
 article[data-state=flip],
@@ -36,11 +39,14 @@ article img {
       position: absolute;
       border-radius: 5px;
       background: #A51212;
-      color: #000000;
+      color: #FFFFFF;
       backface-visibility: hidden;
 }
+
 /*Especificidad 002*/
 article h3 {
+    font-size: 0.85em;
+    text-align: center;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -49,4 +55,15 @@ article h3 {
 /*Especificidad 002*/
 article img {
     transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 500px) {
+    /*Especificidad 002*/
+    article h3 {
+        font-size: 3vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
 }

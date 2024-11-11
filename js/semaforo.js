@@ -55,13 +55,13 @@ class Semaforo {
         button1.disabled = false;
         const button2 = document.querySelectorAll("button")[1];
         button2.disabled = true;
-        var main = document.getElementsByTagName('main')[0];
+        var main = document.querySelector('main');
         main.classList.remove("unload");
         main.classList.remove("load");
 
     }
     endSequence(){
-        var main = document.getElementsByTagName('main')[0];
+        var main = document.querySelector('main');
         main.classList.add('unload'); 
         const button = document.querySelectorAll("button")[1];
         button.disabled = false;

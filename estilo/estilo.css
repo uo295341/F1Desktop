@@ -5,11 +5,14 @@
     font-family: Arial, sans-serif;
     background-color: #B4F5F0;
     color: #041F60;
+    
  }
  /*Especificidad 001*/
  header{
     background-color: #2CEEF0;
     color: #041F60;
+    margin: -0.5em;
+    padding: 0.5em;
 }
  /*Especificidad 001*/
 h1{
@@ -124,7 +127,7 @@ audio{
 }
 
 @media screen and (max-width: 500px) {
-    /*Especificidad 010*/
+    /*Especificidad 002*/
     body>p {
         display: none;
     }
