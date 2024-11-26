@@ -19,15 +19,13 @@ class Fondo {
         .done(function(data) {
             // Only use the first image retrieved
             if (data.items.length > 0) {
-                var imageUrl = data.items[0].media.m; // Get the URL of the first image
-                
-                // Set the background image of the <main> element
+                var imageUrl = data.items[0].media.m;
                 $("body").css({
-                    "background-image": "url(" + imageUrl + ")",
+                    "background-image": "url(" + imageUrl.replace("_m","_b") + ")",
                     "background-size": "cover",
                     "background-repeat": "no-repeat",
-                    "height": "100vh", /* You must set a specified height */
-                    "background-position": "center" /* Center the image */
+                    "height": "100vh", 
+                    "background-position": "center" 
                     
                 });
             }

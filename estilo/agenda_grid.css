@@ -12,9 +12,31 @@ article{
     padding: 1em;
     border-radius: 1em;
     background-color: #FFFFFF;
+    width: auto;
 }
  /*Especificidad 001*/
 h2, button{
     grid-column: 1 / -1;
       text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    /*Especificidad 010*/
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        margin-top: 1em;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 400px) {
+    /*Especificidad 010*/
+    main {
+        display: grid;
+        grid-template-columns: 1fr ;
+        gap: 1em;
+        margin-top: 1em;
+        text-align: center;
+    }
 }

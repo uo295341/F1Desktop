@@ -50,16 +50,20 @@ class Pais {
                     if (!dias[fecha]) {
                         dias[fecha] = {
                             tempMaxTotal: 0,
-                            tempMinTotal: 0,
+                            tempMinTotal: 99999,
                             humedadTotal: 0,
                             lluviaTotal: 0,
                             iconos: {}, 
                             contador: 0
                         };
                     }
-            
-                    dias[fecha].tempMaxTotal += parseFloat($(this).find("temperature").attr("max"));
-                    dias[fecha].tempMinTotal += parseFloat($(this).find("temperature").attr("min"));
+                    if(dias[fecha].tempMaxTotal < parseFloat($(this).find("temperature").attr("max"))){
+                        dias[fecha].tempMaxTotal = parseFloat($(this).find("temperature").attr("max"));
+                    }
+                    if(dias[fecha].tempMinTotal > parseFloat($(this).find("temperature").attr("min"))){
+                        dias[fecha].tempMinTotal = parseFloat($(this).find("temperature").attr("min"));
+                    }
+                    
                     dias[fecha].humedadTotal += parseFloat($(this).find("humidity").attr("value"));
                     dias[fecha].lluviaTotal += parseFloat($(this).find("precipitation").attr("value") || 0);
     
@@ -75,8 +79,8 @@ class Pais {
                 });
                 for (var fecha in dias) {
                     var data = dias[fecha];
-                    var tempMaxMedia = data.tempMaxTotal / data.contador;
-                    var tempMinMedia = data.tempMinTotal / data.contador;
+                    var tempMaxMedia = data.tempMaxTotal;
+                    var tempMinMedia = data.tempMinTotal;
                     var humedadMedia = data.humedadTotal / data.contador;
                     var lluviaMedia = data.lluviaTotal / data.contador;
     
@@ -96,11 +100,10 @@ class Pais {
                     var forecastHtml = `
                         <article>
                             <h3>Pronóstico para ${fecha}</h3>
-                            <p>Temperatura máxima promedio: ${tempMaxMedia.toFixed(2)} °C</p>
-                            <p>Temperatura mínima promedio: ${tempMinMedia.toFixed(2)} °C</p>
+                            <p>Temperatura máxima: ${tempMaxMedia.toFixed(2)} °C</p>
+                            <p>Temperatura mínima: ${tempMinMedia.toFixed(2)} °C</p>
                             <p>Humedad promedio: ${humedadMedia.toFixed(2)} %</p>
                             <p>Precipitación promedio: ${lluviaMedia.toFixed(2)} mm</p>
-                            <p>Icono más frecuente:</p>
                             <img src="${urlIcono}" alt="Icono del clima">
                         </article>
                     `;

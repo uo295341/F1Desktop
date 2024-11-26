@@ -1,18 +1,24 @@
+/*Especificidad 001*/
 article {
     border: 0.3em solid #000000;
     padding: 1em;
     margin: 1em;
+    margin-left: 7vw;
     border-radius: 3em;
     background-color: #FFFFFF;
     display: inline-block;
-    width: 10em;
+    width: 80vw;
     text-align: center;
+    text-wrap: wrap;
+    word-break:break-word;
 }
-
+ /*Especificidad 002*/
 article img {
     width: 4em;
     height: 4em;
 }
+ /*Especificidad 002*/
 article p {
     margin: 1em 0;
+    
 }

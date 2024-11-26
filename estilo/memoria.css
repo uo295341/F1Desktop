@@ -5,8 +5,8 @@ body>main {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    column-gap: 5vw;
-    row-gap: 5vw;
+    column-gap: 2vw;
+    row-gap: 2vw;
   }
 /*Especificidad 011*/
 main > *:first-child {
@@ -15,9 +15,8 @@ main > *:first-child {
   }
 /*Especificidad 001*/
 article {
-    width: 20%;
-    height: 25vw;
-    margin: 5px;
+    width: 25vw;
+    height: 15vw;
     transform: scale(1);
     cursor: pointer;
     transform-style: preserve-3d;
@@ -65,5 +64,15 @@ article img {
         flex-direction: row;
         align-items: center;
         justify-content: center;
+    }
+    article {
+        width: 40vw;
+        height: 25vw;
+        transform: scale(1);
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transition: transform .5s;
+        box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+        
     }
 }
