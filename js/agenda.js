@@ -6,6 +6,7 @@ class Agenda {
     }
 
     cargarCarreras() {
+        console.log(this.url);
         $.ajax({
             url: this.url,  // URL de la API para obtener las carreras de la temporada actual
             method: "GET",
@@ -23,14 +24,14 @@ class Agenda {
                     let country = race.Circuit.Location.country;  // País
                     let date = race.date;  // Fecha de la carrera
                     let time = race.time ? race.time : 'N/A';  // Hora de la carrera (si existe)
-                    
+
                     // Generamos el HTML para mostrar la información de la carrera
                     output += `
                         <article>
                             <h3>${raceName}</h3>
                             <p>Circuito: ${circuitName}</p>
                             <p>Ubicación: ${locality}, ${country}</p>
-                            <p>Fecha: ${new Date().toDateString(date)} a las ${time} UTC</p>
+                            <p>Fecha: ${date} a las ${time} UTC</p>
                         </article>
                     `;
                 });

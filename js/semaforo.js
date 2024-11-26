@@ -48,9 +48,8 @@ class Semaforo {
     stopReaction(){
         this.clic_moment = new Date();
         let doc = document.querySelector("main");
-        let timeReaction = document.createElement("p");
-        timeReaction.textContent = (this.clic_moment- this.unload_moment)/1000 + "s";
-        doc.appendChild(timeReaction);
+        let timeReaction = document.querySelector("main p");
+        timeReaction.textContent = "Tu tiempo de reacción es "+(this.clic_moment- this.unload_moment)/1000 + "s";
         const button1 = document.querySelectorAll("button")[0];
         button1.disabled = false;
         const button2 = document.querySelectorAll("button")[1];
@@ -58,6 +57,7 @@ class Semaforo {
         var main = document.querySelector('main');
         main.classList.remove("unload");
         main.classList.remove("load");
+        this.createRecordForm();
 
     }
     endSequence(){
@@ -67,6 +67,10 @@ class Semaforo {
         button.disabled = false;
         button.onclick = this.stopReaction.bind(this);
 
+    }
+
+    createRecordForm(){
+        $("main").append($("input"));
     }
 }
     

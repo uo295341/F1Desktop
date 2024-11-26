@@ -1,4 +1,4 @@
-<svg height="auto" width="auto" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
         <polyline points="80,163.0 
 110,166.0 
 140,169.0 
@@ -19,6 +19,5 @@
 590,127.0 
 620,150.0 
 650,157.0 
-80,163.0" style="fill:red;stroke:red;stroke-width:3" />
-        Su agente de usuario no soporta SVG.
+80,163.0" style="fill:black;stroke:black;stroke-width:3" />
     </svg>

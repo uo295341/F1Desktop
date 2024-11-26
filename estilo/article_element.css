@@ -1,18 +1,42 @@
+/*Especificidad 001*/
 article {
     border: 0.3em solid #000000;
     padding: 1em;
     margin: 1em;
     border-radius: 3em;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF;/*Color de texto definidio en estilo.css en body*/
     display: inline-block;
-    width: 10em;
+    width: 22vw;
     text-align: center;
+    text-wrap: wrap;
 }
+@media screen and (max-width: 800px) {
+    /*Especificidad 001*/
+    article { 
+        width: 33vw;/*redefino el width para que sea adaptable*/
+    }
+}
+@media screen and (max-width: 550px) {
+    /*Especificidad 001*/
+    article { 
+        width: 80%;/*redefino el width para que sea adaptable*/
+    }
+}
+/*Especificidad 002*/
+section article {
 
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 70%;
+    word-break:break-word;/*Se usa esto para que cuando pongas una palabra muy larga, se divida correctamente en lugar de salirse de la pantalla*/
+}
+ /*Especificidad 002*/
 article img {
     width: 4em;
     height: 4em;
 }
+ /*Especificidad 002*/
 article p {
     margin: 1em 0;
+    
 }

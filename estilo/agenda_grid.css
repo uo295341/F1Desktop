@@ -11,10 +11,23 @@ article{
     border: 0.2em solid #000000;
     padding: 1em;
     border-radius: 1em;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF;/*Color de texto en estilo.css, en body*/
+    width: auto;
 }
  /*Especificidad 001*/
 h2, button{
     grid-column: 1 / -1;
-      text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    /*Especificidad 001*/
+    main { 
+        grid-template-columns: 1fr 1fr;/*Redefinicion de columns para que al hacer la pantalla mas pequeña se vea todo bien*/
+    }
+}
+@media screen and (max-width: 400px) {
+    /*Especificidad 001*/
+    main {
+        grid-template-columns: 1fr ;/*Redefinicion de columns para que al hacer la pantalla mas pequeña se vea todo bien*/
+    }
 }

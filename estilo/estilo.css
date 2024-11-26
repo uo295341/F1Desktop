@@ -16,13 +16,11 @@
 }
  /*Especificidad 001*/
 h1{
-    /*background color en header*/
-    color: #033F6D;
+    color: #033F6D;/*background color en header*/
 }
  /*Especificidad 001*/
 nav{
-    /*background color en header*/
-    color: #033F6D;
+    color: #033F6D;/*background color en header*/
    
 }
  /*Especificidad 002*/
@@ -32,27 +30,27 @@ body>p {
  /*Especificidad 002*/
 main a{
     text-decoration:underline;
-    color: #000000;
-     /*background color en body*/
+    color: #000000;/*background color en body*/
 }
 
  /*Especificidad 002*/
 header a{
     text-decoration: none;
-    color: #033F6D;
-     /*background color en header*/
+    color: #033F6D; /*background color en header*/
 }
+    
 
  /*Especificidad 001*/
-ol{
+main>ol{
     font-size: 1em;
     list-style-type: lower-roman;
 }
+
  /*Especificidad 002*/
 li::marker {
     color: #033F6D;
-    font-weight: bold; 
-     /*background color en body*/
+    font-weight: bold;  /*background color en body*/
+    
 }
  /*Especificidad 001*/
 ul{
@@ -65,8 +63,8 @@ ul ul{
 }
 /*Especificidad 001*/
 dl{
-    background-color: #2CEEF0;
-    /*color especificado en body*/
+    background-color: #2CEEF0; /*color especificado en body*/
+   
 }
 /*Especificidad 001*/
 dt{
@@ -89,7 +87,7 @@ table {
 caption{
     border-collapse: collapse;
     border: 0.3em solid #000000;
-    border-bottom: 0em;
+
     text-align:center;
   }
 
@@ -112,7 +110,7 @@ video {
     height:auto;
 }
 /*Especificidad 001*/
-img {
+main>img {
     width: 60%;
     height: auto;
  }
@@ -125,7 +123,23 @@ audio{
     font-weight: bold;
     font-size: 1.3em;
 }
+/*Especificidad 002*/
+main>figure{
+    width:80%;
+    height: 80%;
+    margin-bottom: 0em;
+}
+/*Especificidad 003*/
+main>figure>img{
+    width:50%;
+    height: 50%;
+    margin-bottom: 0em;
+}
 
+/*Especificidad 011*/
+figure:nth-last-of-type(1){
+    height: 50vh;
+}
 @media screen and (max-width: 500px) {
     /*Especificidad 002*/
     body>p {

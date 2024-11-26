@@ -10,17 +10,23 @@ header{
 
 
 @media screen and (max-width: 750px) {
-    /*Especificidad 010*/
+    /*Especificidad 001*/
     header{
-        flex-direction: column;
-        align-items:baseline;
+        flex-direction: column;/*Redefinicion de flex-direction para que al hacerlo pequeño aparezca debajo*/
+        align-items:baseline;/*Redefino esto para que al hacerlo pequeño se alinee todo a la izquierda*/
     }
 }
-
+ /*Especificidad 001*/
 header nav{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     row-gap: 0.5em;
     column-gap: 0.5em; 
+}
+ /*Especificidad 001*/
+label {
+display: flex;
+flex-direction: column;
+margin-bottom: 1em;
 }

@@ -21,17 +21,16 @@ def create_svg_from_xml(xml_file):
     points_string = " \n".join(points)
 
     # Generate SVG content
-    svg_content = f"""<svg height="auto" width="auto" xmlns="http://www.w3.org/2000/svg">
-        <polyline points="{points_string}" style="fill:red;stroke:red;stroke-width:3" />
-        Su agente de usuario no soporta SVG.
+    svg_content = f"""<svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="{points_string}" style="fill:black;stroke:black;stroke-width:3" />
     </svg>"""
 
     # Write the SVG content to an SVG file
-    output_file = 'SEW\\xml\\perfil.svg'
+    output_file = 'xml\\perfil.svg'
     with open(output_file, 'w') as file:
         file.write(svg_content)
 
     print(f"SVG file created: {output_file}")
 
 # Usage example
-create_svg_from_xml('SEW\\xml\\circuitoEsquema.xml')
+create_svg_from_xml('xml\\circuitoEsquema.xml')

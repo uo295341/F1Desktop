@@ -43,7 +43,7 @@ def main():
     nombreKML = "circuito.kml"
     nuevoKML = Kml()
 
-    tree = ET.parse('SEW\\xml\\circuitoEsquema.xml')
+    tree = ET.parse('xml\\circuitoEsquema.xml')
     root = tree.getroot()
 
     # Define namespaces to handle xmlns
