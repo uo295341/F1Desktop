@@ -77,4 +77,14 @@ article img {
         
         
     }
+    article {
+        width: 40vw;
+        height: 25vw;
+        transform: scale(1);
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transition: transform .5s;
+        box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+        
+    }
 }
