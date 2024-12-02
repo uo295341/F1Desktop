@@ -110,7 +110,7 @@ video {
     height:auto;
 }
 /*Especificidad 001*/
-main>img {
+img {
     width: 60%;
     height: auto;
  }
@@ -126,20 +126,18 @@ audio{
 /*Especificidad 002*/
 main>figure{
     width:80%;
-    height: 80%;
-    margin-bottom: 0em;
-}
-/*Especificidad 003*/
-main>figure>img{
-    width:50%;
-    height: 50%;
+    height: 50vh;
     margin-bottom: 0em;
 }
 
-/*Especificidad 011*/
-figure:nth-last-of-type(1){
-    height: 50vh;
+/*Especificidad 003*/
+main>figure>img{
+    width:80%;
+    height: 100%;
+    margin-bottom: 0em;
 }
+
+
 @media screen and (max-width: 500px) {
     /*Especificidad 002*/
     body>p {

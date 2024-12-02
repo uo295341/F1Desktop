@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico" />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <script src="js/viajes.js"></script>
     <title>Viajes</title>
 </head>
 
@@ -33,7 +35,13 @@
     </p>
     <main>
         <h2>Viajes</h2>
-        <p>En desarrollo</p>
+        <figure>
+            <input type="button" value="Obtener mapa estático" onClick = "miMapa.getMapaEstaticoMapBox('ubicacion');"/>
+        </figure>
+        
+        <figure>
+            <input type="button" value="Obtener mapa dinamico" onClick = "miMapa.getMapaDinamicoMapBox('ubicacion');"/>
+        </figure>
     </main>
 
 </body>

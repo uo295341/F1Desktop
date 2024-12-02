@@ -47,9 +47,6 @@ class Semaforo {
     }
     stopReaction(){
         this.clic_moment = new Date();
-        let doc = document.querySelector("main");
-        let timeReaction = document.querySelector("main p");
-        timeReaction.textContent = "Tu tiempo de reacción es "+(this.clic_moment- this.unload_moment)/1000 + "s";
         const button1 = document.querySelectorAll("button")[0];
         button1.disabled = false;
         const button2 = document.querySelectorAll("button")[1];
@@ -70,7 +67,31 @@ class Semaforo {
     }
 
     createRecordForm(){
-        $("main").append($("input"));
+        var label = document.createElement("label");
+        var input = document.createElement("input");
+        label.innerHTML = "Nombre";
+        label.append(input);
+        $("main").append(label);
+        var label2 = document.createElement("label");
+        var input2 = document.createElement("input");
+        label2.innerHTML = "Apellidos";
+        label2.append(input2);
+        $("main").append(label2);
+        var label3 = document.createElement("label");
+        var input3 = document.createElement("input");
+        label3.innerHTML = "Nivel";
+        $(input3).attr("value",this.difficulty);
+        $(input3).attr("readonly",true);
+        label3.append(input3);
+        $("main").append(label3);
+        var label4 = document.createElement("label");
+        var input4 = document.createElement("input");
+        label4.innerHTML = "Tiempo de reaccion";
+        var value = "Tu tiempo de reacción es "+(this.clic_moment- this.unload_moment)/1000 + "s";
+        $(input4).attr("value",value);
+        $(input4).attr("readonly",true);
+        label4.append(input4);
+        $("main").append(label4);
     }
 }
     

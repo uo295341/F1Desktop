@@ -3,7 +3,6 @@ article {
     border: 0.3em solid #000000;
     padding: 1em;
     margin: 1em;
-    margin-left: 7vw;
     border-radius: 3em;
     background-color: #FFFFFF;/*Color de texto definidio en estilo.css en body*/
     display: inline-block;
@@ -41,4 +40,3 @@ article p {
     margin: 1em 0;
     
 }
-

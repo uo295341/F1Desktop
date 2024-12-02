@@ -56,7 +56,6 @@ class Viajes {
         
         this.imagenMapa = url + lonlatzoom +tamaño  + apiKey;
         ubicacion.innerHTML += "<br><img src='"+this.imagenMapa+"' alt='mapa estático mapboox' />";
-        button1.remove();
         
     }
     getMapaDinamicoMapBox(dondeVerlo){

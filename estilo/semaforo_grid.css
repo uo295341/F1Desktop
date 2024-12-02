@@ -18,6 +18,10 @@
       gap: 5% 3%;
       align-items: center;
   }
+  label{
+    grid-column: 1 / span 4;
+  }
+
   /*Especifidad 001*/
   /*Especifidad 002*/
   h2,main>p {
