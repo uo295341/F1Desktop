@@ -15,13 +15,14 @@ main > *:first-child {
   }
 /*Especificidad 001*/
 article {
-    width: 25vw;
-    height: 15vw;
+    width: 20vw;
+    height: 10vw;
+    border: 0.4em solid black;
     transform: scale(1);
     cursor: pointer;
     transform-style: preserve-3d;
     transition: transform .5s;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    box-shadow: 0.1em 0.1em 0.1em rgba(0,0,0,.3);
     
 }
 /*Especificidad 011*/
@@ -37,8 +38,8 @@ article img {
       height: 100%;
       position: absolute;
       border-radius: 5px;
-      background: #A51212;
-      color: #FFFFFF;
+      background: #FFFFFF;
+      color: #000;
       backface-visibility: hidden;
 }
 
@@ -55,7 +56,17 @@ article h3 {
 article img {
     transform: rotateY(180deg);
 }
-
+@media screen and (max-width: 800px) {
+    /*Especificidad 002*/
+    article h3 {
+        font-size: 1.5vw;/*Se redefine font size para que se vean bien las letras cuando se hace pequeño*/
+    }
+    /*Especificidad 001*/
+    article {
+        width: 26vw;/*Se redefine width para que se vean bien las cartas cuando se hace pequeño*/
+        height: 16vw;/*Se redefine height para que se vean bien las cartas cuando se hace pequeño*/
+    }
+}
 @media screen and (max-width: 500px) {
     /*Especificidad 002*/
     article h3 {
@@ -63,18 +74,7 @@ article img {
     }
     /*Especificidad 001*/
     article {
-        width: 40vw;/*Se redefine width para que se vean bien las cartas cuando se hace pequeño*/
-        height: 25vw;/*Se redefine height para que se vean bien las cartas cuando se hace pequeño*/
-       
-        
-    }
-}
-@media screen and (min-width: 800px) {
-    /*Especificidad 001*/
-    article {
-        width: 22vw;/*Se redefine width para que se vean bien las cartas cuando se hace grande*/
-        height: 16vw;/*Se redefine height para que se vean bien las cartas cuando se hace grande*/
-        
-        
+        width: 33vw;/*Se redefine width para que se vean bien las cartas cuando se hace pequeño*/
+        height: 20vw;/*Se redefine height para que se vean bien las cartas cuando se hace pequeño*/
     }
 }
