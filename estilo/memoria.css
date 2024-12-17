@@ -59,10 +59,11 @@ article img {
 @media screen and (max-width: 800px) {
     /*Especificidad 002*/
     article h3 {
-        font-size: 1.5vw;/*Se redefine font size para que se vean bien las letras cuando se hace pequeño*/
+        font-size: 3vw;/*Se redefine font size para que se vean bien las letras cuando se hace pequeño*/
     }
     /*Especificidad 001*/
     article {
+        border: 0.2em solid black;
         width: 26vw;/*Se redefine width para que se vean bien las cartas cuando se hace pequeño*/
         height: 16vw;/*Se redefine height para que se vean bien las cartas cuando se hace pequeño*/
     }
@@ -71,10 +72,5 @@ article img {
     /*Especificidad 002*/
     article h3 {
         font-size: 3vw;/*Se redefine font size para que se vean bien las letras cuando se hace pequeño*/
-    }
-    /*Especificidad 001*/
-    article {
-        width: 33vw;/*Se redefine width para que se vean bien las cartas cuando se hace pequeño*/
-        height: 20vw;/*Se redefine height para que se vean bien las cartas cuando se hace pequeño*/
     }
 }
