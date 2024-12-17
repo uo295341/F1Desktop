@@ -11,7 +11,7 @@ article{
     border: 0.2em solid #000000;
     padding: 1em;
     border-radius: 1em;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF;/*Color heredado de estilo.css del body*/
 }
  /*Especificidad 001*/
 h2, button{
@@ -28,26 +28,5 @@ h2, button{
     /*Especificidad 001*/
     main {
         grid-template-columns: 1fr ;/*Redefinicion de columns para que al hacer la pantalla mas pequeña se vea todo bien*/
-    }
-}
-
-@media screen and (max-width: 600px) {
-    /*Especificidad 010*/
-    main {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1em;
-        margin-top: 1em;
-        text-align: center;
-    }
-}
-@media screen and (max-width: 400px) {
-    /*Especificidad 010*/
-    main {
-        display: grid;
-        grid-template-columns: 1fr ;
-        gap: 1em;
-        margin-top: 1em;
-        text-align: center;
     }
 }

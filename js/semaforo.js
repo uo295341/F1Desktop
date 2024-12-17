@@ -67,32 +67,44 @@ class Semaforo {
     }
 
     createRecordForm(){
+        var form = document.createElement("form");
         var label = document.createElement("label");
         var input = document.createElement("input");
+        $(input).attr("name","name");
         label.innerHTML = "Nombre";
         label.append(input);
-        $("main").append(label);
+        $(form).append(label);
         var label2 = document.createElement("label");
         var input2 = document.createElement("input");
+        $(input2).attr("name","surname");
         label2.innerHTML = "Apellidos";
         label2.append(input2);
-        $("main").append(label2);
+        $(form).append(label2);
         var label3 = document.createElement("label");
         var input3 = document.createElement("input");
+        $(input3).attr("name","difficulty");
         label3.innerHTML = "Nivel";
         $(input3).attr("value",this.difficulty);
         $(input3).attr("readonly",true);
         label3.append(input3);
-        $("main").append(label3);
+        $(form).append(label3);
         var label4 = document.createElement("label");
         var input4 = document.createElement("input");
+        $(input4).attr("name","time");
         label4.innerHTML = "Tiempo de reaccion";
-        var value = "Tu tiempo de reacción es "+(this.clic_moment- this.unload_moment)/1000 + "s";
+        var value = (this.clic_moment- this.unload_moment)/1000;
         $(input4).attr("value",value);
         $(input4).attr("readonly",true);
         label4.append(input4);
-        $("main").append(label4);
+        $(form).append(label4);
+        var label5 = document.createElement("label");
+        var input5 = document.createElement("button");
+
+        input5.innerHTML="Enviar formulario";
+        label5.append(input5);
+        $(form).append(label5);
+        $(form).attr("action","#");
+        $(form).attr("method","post");
+        $("main").append(form);
     }
 }
-    
-new Semaforo();

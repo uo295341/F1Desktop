@@ -82,8 +82,66 @@ previewFile(files) {
     "load",
     () => {
       var dom = new DOMParser().parseFromString(reader.result,"text/xml");
-      var GeoJson = toGeoJSON.kml(dom);
-      console.log(dom);
+       // Initialize the GeoJSON structure
+      const geoJSON = {
+        type: "FeatureCollection",
+        features: []
+      };
+
+      // Extract all <Placemark> elements from the KML
+      const placemarks = dom.getElementsByTagName("Placemark");
+
+      // Array to store the points for the LineString
+      const lineCoordinates = [];
+
+      // Loop through each Placemark and extract the data
+      for (let i = 0; i < placemarks.length; i++) {
+          const placemark = placemarks[i];
+          
+          // Extract the <name> of the placemark (if any)
+          const name = placemark.getElementsByTagName("name")[0]?.textContent || "Unnamed";
+
+          // Extract the coordinates of the <Point>
+          const coordinates = placemark.getElementsByTagName("coordinates")[0]?.textContent.trim().split(",");
+          
+          if (coordinates && coordinates.length >= 2) {
+              const lon = parseFloat(coordinates[0]);
+              const lat = parseFloat(coordinates[1]);
+              const elevation = coordinates.length === 3 ? parseFloat(coordinates[2]) : 0;
+
+              // Create the Point Feature
+              const feature = {
+                  type: "Feature",
+                  geometry: {
+                      type: "Point",
+                      coordinates: [lon, lat, elevation]
+                  },
+                  properties: {
+                      name: `\n${i + 1} ${lat},${lon}\n`,
+                      description: "\nLas Vegas Track Point\n"  // You can customize this description
+                  }
+              };
+
+              // Add the feature to the GeoJSON collection
+              geoJSON.features.push(feature);
+
+              // Add the coordinates to the LineString array
+              lineCoordinates.push([lon, lat, elevation]);
+          }
+      }
+      // Add the LineString feature
+      const lineString = {
+          type: "Feature",
+          geometry: {
+              type: "LineString",
+              coordinates: lineCoordinates
+          },
+          properties: {
+              "stroke-width": 5
+          }
+      };
+
+      geoJSON.features.push(lineString);
       var coordinates = dom.querySelector("Placemark Point coordinates").textContent.split(",");
 
       var ubicacion=document.createElement("figure");
@@ -97,7 +155,7 @@ previewFile(files) {
       map.on('load', () => {
         map.addSource('circuit', {
             type: 'geojson',
-            data: GeoJson
+            data: geoJSON
         });
 
         map.addLayer({

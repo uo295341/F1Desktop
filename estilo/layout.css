@@ -16,7 +16,7 @@ header{
         align-items:baseline;/*Redefino esto para que al hacerlo pequeño se alinee todo a la izquierda*/
     }
 }
- /*Especificidad 001*/
+ /*Especificidad 002*/
 header nav{
     display: flex;
     align-items: center;

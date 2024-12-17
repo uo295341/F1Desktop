@@ -14,17 +14,16 @@
       margin: auto;
       display: grid;
       grid-template-columns: repeat(4, 0.5fr);
-      
       gap: 5% 3%;
       align-items: center;
   }
-  label{
+  /*Especifidad 001*/
+  form{
     grid-column: 1 / span 4;
   }
 
-  /*Especifidad 001*/
   /*Especifidad 002*/
-  h2,main>p {
+  h2,main>p, section {
       grid-column: 1 / -1;
       text-align: center;
   }
@@ -40,6 +39,7 @@
     aspect-ratio: 8;
     
   }
+  
    /*Especifidad 011*/
   button:first-of-type {
       grid-column: 1 / span 2;

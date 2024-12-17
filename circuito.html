@@ -1,24 +1,26 @@
 <!DOCTYPE HTML>
 
 <html lang="es">
+
 <head>
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <meta name="author" content="Ignacio Hovan Rojas" />
     <meta name="description" content="pagina con los circuitos donde participa el piloto" />
-    <meta name ="keywords" content ="circuito" />
-    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="circuito" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/togeojson/0.16.0/togeojson.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>  
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
     <script src="js/circuito.js"></script>
     <title>Circuito</title>
 </head>
- <!--22 LAS VEGAS ESTADOS UNIDOS LAS VEGAS -->
+<!--22 LAS VEGAS ESTADOS UNIDOS LAS VEGAS -->
+
 <body>
     <header>
         <h1><a href="index.html" title="Inicio">F1 Desktop</a></h1>
@@ -29,7 +31,7 @@
             <a href="calendario.html" title="calendario">Calendario</a>
             <a href="metereología.html" title="meteorología">Meteorología</a>
             <a href="circuito.html" title="circuito" class="active">Circuito</a>
-            <a href="viajes.html" title="viajes">Viajes</a>
+            <a href="viajes.php" title="viajes">Viajes</a>
             <a href="juegos.html" title="juegos">Juegos</a>
         </nav>
     </header>
@@ -37,16 +39,17 @@
         Estás en: <a href="index.html" title="Inicio">Inicio</a> | Circuito
     </p>
     <main>
-        <h2>Circuito</h2>   
-        <label>Seleccione un archivo xml: 
-            <input type="file" onchange="circuito.leerArchivoTexto(this.files);" accept=".xml"/>
+        <h2>Circuito</h2>
+        <label>Seleccione un archivo xml:
+            <input type="file" onchange="circuito.leerArchivoTexto(this.files);" accept=".xml" />
         </label>
-        <label>Seleccione un archivo kml: 
-            <input type="file" onchange="circuito.previewFile(this.files)" accept=".kml"/>
+        <label>Seleccione un archivo kml:
+            <input type="file" onchange="circuito.previewFile(this.files)" accept=".kml" />
         </label>
-        <label>Seleccione un archivo svg: 
-            <input type="file" onchange="circuito.leerArchivoSvg(this.files)" accept=".svg"/>
-        </label>  
+        <label>Seleccione un archivo svg:
+            <input type="file" onchange="circuito.leerArchivoSvg(this.files)" accept=".svg" />
+        </label>
     </main>
 </body>
+
 </html>

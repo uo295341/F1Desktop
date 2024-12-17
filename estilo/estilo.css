@@ -144,3 +144,68 @@ main>figure>img{
         display: none;
     }
 }
+/*Especificidad 001*/
+canvas {
+    display: block;
+    margin-top: 3em;
+    width:90%;
+    height:90%;
+}
+
+  /*Especificidad 002*/
+ figure+article {
+    width: 100%;
+    max-width: 100vh;
+    height: 70vh;
+    position: relative;
+    overflow: hidden; /* <===  */
+    border-radius: 1em;
+  }
+  /*Especificidad 003*/
+  figure+article h3 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0.5em;
+      font-size: 2em;
+  }
+  /*Especificidad 003*/
+  figure+article>img {
+    width: 100%;
+    max-width: 100vh;
+    height: 60vh;
+    position: absolute;
+    transition: all 0.5s;
+    object-fit: cover;
+    border-radius: 0.5em;
+  }
+  /*Especificidad 003*/
+  figure+article>button {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    background-color: #fff;/*No hay color primario ya que nunca va a tener texto*/
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+  }
+  /*Especificidad 013*/
+  figure+article>button:active {
+    transform: scale(1.1);
+  }
+  /*Especificidad 013*/
+  figure+article> button:nth-of-type(2) {
+    top: 50%;
+    left: 2%;
+  }
+  /*Especificidad 013*/
+  figure+article> button:nth-of-type(1) {
+    top: 50%;
+    right: 2%;
+  }

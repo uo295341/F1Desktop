@@ -1,229 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1 Circuito de Línea Blanca con Marcadores</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-        canvas {
-            display: block;
-        }
-        #start-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background: red;
-            color: white;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Ignacio Hovan Rojas" />
+    <meta name="description" content="pagina con juegos varios" />
+    <meta name ="keywords" content ="juegos, resultado" />
+    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="icon" href="multimedia/imagenes/favicon.ico" />
+    <script src="js/api.js"></script>
+    <title>Circuito F1</title>
+    
 </head>
 <body>
-    <button id="start-button">Jugar</button>
-    <canvas></canvas>
-
-    <script>
-        const canvas = document.querySelector("canvas");
-        const ctx = canvas.getContext("2d");
-        const startButton = document.getElementById("start-button");
-
-        let carX = 400, carY = 300; // Posición inicial del coche
-        let deltaX = 0, deltaY = 0;
-        let isPointerLocked = false;
-        let startTime = null;
-        let penaltyTime = 0;
-        let laps = 0; // Número de vueltas completadas
-        let hasCrossedLine = false; // Verifica si el coche ya cruzó la línea de salida
-        let markersPassed = 0; // Cuántos marcadores ha pasado el coche
-
-        // Puntos del circuito (marcadores invisibles)
-        const markers = [
-            { x: 300, y: 100 },
-            { x: 500, y: 150 },
-            { x: 700, y: 200 },
-            { x: 850, y: 350 },
-            { x: 900, y: 500 },
-            { x: 850, y: 650 },
-            { x: 700, y: 700 },
-            { x: 500, y: 650 },
-            { x: 300, y: 600 },
-            { x: 200, y: 400 }
-        ];
-
-        const finishLine = { x: 295, y: 95, width: 40, height: 10 }; // Línea de salida
-
-        // Ajustar tamaño del canvas
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        // Dibuja el circuito (línea blanca más gruesa y línea de salida alineada)
-        function drawCircuit() {
-            ctx.fillStyle = "green";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Circuito delimitado por línea blanca más gruesa
-            ctx.strokeStyle = "white";
-            ctx.lineWidth = 40; // Grosor aumentado
-            ctx.beginPath();
-            ctx.moveTo(300, 100);
-            ctx.bezierCurveTo(500, 150, 700, 200, 850, 350); // Curva superior
-            ctx.lineTo(900, 500);
-            ctx.bezierCurveTo(850, 650, 700, 700, 500, 650); // Curva inferior derecha
-            ctx.lineTo(300, 600);
-            ctx.bezierCurveTo(200, 400, 250, 300, 300, 100); // Curva inferior
-            ctx.closePath();
-            ctx.stroke();
-
-            // Línea de salida en el circuito
-            ctx.fillStyle = "yellow";
-            ctx.fillRect(finishLine.x, finishLine.y, finishLine.width, finishLine.height);
-
-            // Dibuja los marcadores invisibles (solo para debug)
-            ctx.fillStyle = "blue";
-            markers.forEach(marker => {
-                ctx.beginPath();
-                ctx.arc(marker.x, marker.y, 5, 0, Math.PI * 2);
-                ctx.fill();
-            });
-        }
-
-        // Verifica si el coche está dentro de la línea blanca
-        function isCarOnTrack(x, y) {
-            ctx.save();
-            ctx.lineWidth = 40;
-            ctx.beginPath();
-            ctx.moveTo(300, 100);
-            ctx.bezierCurveTo(500, 150, 700, 200, 850, 350); // Curva superior
-            ctx.lineTo(900, 500);
-            ctx.bezierCurveTo(850, 650, 700, 700, 500, 650); // Curva inferior derecha
-            ctx.lineTo(300, 600);
-            ctx.bezierCurveTo(200, 400, 250, 300, 300, 100); // Curva inferior
-            ctx.closePath();
-            const isOnTrack = ctx.isPointInStroke(x, y);
-            ctx.restore();
-            return isOnTrack;
-        }
-
-        // Verifica si el coche cruza la línea de salida
-        function checkFinishLine() {
-            if (
-                carX > finishLine.x &&
-                carX < finishLine.x + finishLine.width &&
-                carY > finishLine.y &&
-                carY < finishLine.y + finishLine.height
-            ) {
-                if (markersPassed === markers.length) {
-                    if (!hasCrossedLine) {
-                        laps++;
-                        markersPassed = 0; // Resetea los marcadores al contar una vuelta
-                        hasCrossedLine = true; // Marca que ya cruzó
-                    }
-                }
-            } else {
-                hasCrossedLine = false; // Resetea la detección cuando sale de la línea
-            }
-        }
-
-        // Verifica si el coche ha pasado por los marcadores en el orden correcto
-        function checkMarkers() {
-            for (let i = markersPassed; i < markers.length; i++) {
-                const marker = markers[i];
-                const distance = Math.hypot(carX - marker.x, carY - marker.y);
-                if (distance < 10) { // Si el coche está cerca de un marcador
-                    markersPassed++;
-                    break; // Solo contar un marcador por vez
-                }
-            }
-        }
-
-        // Dibuja el coche
-        function drawCar() {
-            ctx.fillStyle = "red";
-            ctx.beginPath();
-            ctx.arc(carX, carY, 15, 0, Math.PI * 2);
-            ctx.fill();
-        }
-
-        // Actualiza la posición del coche según el movimiento del ratón
-        function updateCar() {
-            carX += deltaX;
-            carY += deltaY;
-
-            // Limitar la posición dentro de los bordes del canvas
-            carX = Math.max(0, Math.min(canvas.width, carX));
-            carY = Math.max(0, Math.min(canvas.height, carY));
-
-            // Penalización si está fuera de la pista
-            if (!isCarOnTrack(carX, carY)) {
-                penaltyTime += 0.05; // Penalización acumulativa
-            }
-        }
-
-        // Ciclo principal del juego
-        function gameLoop(timestamp) {
-            if (!startTime) startTime = timestamp;
-            const elapsedTime = ((timestamp - startTime) / 1000).toFixed(2);
-            const totalTime = (parseFloat(elapsedTime) + penaltyTime).toFixed(2);
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawCircuit();
-            drawCar();
-
-            checkFinishLine();
-            checkMarkers();
-
-            // Mostrar tiempo, penalización y vueltas
-            ctx.fillStyle = "white";
-            ctx.font = "20px Arial";
-            ctx.fillText(`Tiempo: ${elapsedTime}s`, 20, 30);
-            ctx.fillText(`Penalización: +${penaltyTime.toFixed(2)}s`, 20, 60);
-            ctx.fillText(`Total: ${totalTime}s`, 20, 90);
-            ctx.fillText(`Vueltas: ${laps}/3`, 20, 120);
-
-            // Terminar el juego después de 3 vueltas
-            if (laps >= 3) {
-                ctx.fillStyle = "yellow";
-                ctx.font = "40px Arial";
-                ctx.fillText("¡Juego terminado!", canvas.width / 2 - 150, canvas.height / 2);
-                ctx.fillText(`Tiempo final: ${totalTime}s`, canvas.width / 2 - 150, canvas.height / 2 + 50);
-                return; // Salir del ciclo del juego
-            }
-
-            updateCar();
-            requestAnimationFrame(gameLoop);
-        }
-
-        // Activar pantalla completa y bloquear el puntero
-        function startGame() {
-            canvas.requestPointerLock(); // Esto ahora será aceptado porque está dentro del clic
-            startButton.style.display = "none";
-            requestAnimationFrame(gameLoop);
-        }
-
-        // Manejador de eventos de bloqueo de puntero
-        document.addEventListener("pointerlockchange", () => {
-            isPointerLocked = document.pointerLockElement === canvas;
-        });
-
-        // Detectar movimiento del ratón
-        document.addEventListener("mousemove", (e) => {
-            if (isPointerLocked) {
-                deltaX = e.movementX;
-                deltaY = e.movementY;
-            }
-        });
-
-        // Iniciar el juego
-        startButton.addEventListener("click", () => {
-            startGame();
-        });
-    </script>
+    <header>
+        <h1><a href="index.html" title="Inicio">F1 Desktop</a></h1>
+        <nav>
+            <a href="index.html" title="Inicio">Inicio</a>
+            <a href="piloto.html" title="piloto">Piloto</a>
+            <a href="noticias.html" title="noticias">Noticias</a>
+            <a href="calendario.html" title="calendario">Calendario</a>
+            <a href="metereología.html" title="meteorología">Meteorología</a>
+            <a href="circuito.html" title="circuito">Circuito</a>
+            <a href="viajes.php" title="viajes">Viajes</a>
+            <a href="juegos.html" title="juegos" class="active">Juegos</a>
+        </nav>
+    </header>
+    <p>
+        Estás en: <a href="index.html" title="Inicio">Inicio</a> | <a href="juegos.html" title="Juegos">Juegos</a> | Carrera
+    </p>
+    <main><button id="start-button">Jugar</button>
+        <canvas></canvas></main>
+    
 </body>
 </html>
