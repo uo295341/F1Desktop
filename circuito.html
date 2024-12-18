@@ -40,15 +40,14 @@
     </p>
     <main>
         <h2>Circuito</h2>
-        <label>Seleccione un archivo xml:
-            <input type="file" onchange="circuito.leerArchivoTexto(this.files);" accept=".xml" />
-        </label>
-        <label>Seleccione un archivo kml:
-            <input type="file" onchange="circuito.previewFile(this.files)" accept=".kml" />
-        </label>
-        <label>Seleccione un archivo svg:
-            <input type="file" onchange="circuito.leerArchivoSvg(this.files)" accept=".svg" />
-        </label>
+        <label for="xml-file">Seleccione un archivo XML:</label>
+        <input id="xml-file" type="file" onchange="circuito.leerArchivoTexto(this.files);" accept=".xml">
+
+        <label for="kml-file">Seleccione un archivo KML:</label>
+        <input id="kml-file" type="file" onchange="circuito.previewFile(this.files)" accept=".kml" />
+
+        <label for="svg-file">Seleccione un archivo SVG:</label>
+        <input id="svg-file" type="file" onchange="circuito.leerArchivoSvg(this.files)" accept=".svg" />
     </main>
 </body>
 

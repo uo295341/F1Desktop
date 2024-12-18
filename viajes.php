@@ -109,12 +109,10 @@
     
     echo "  
             <form action='#' method='post' name='calculadora'>
-                <label>Inserte la cantidad de euros que quiere convertir a dolares americanos:
-                    <input type='text' name='dinero' value='$miDinero'/>
-                </label>
-                <label>Dinero en dolares:
-                    <input type='text' name='dineroCambiado' value='$miDineroCambiado' readonly/>
-                </label>           
+                <label for='euros'>Inserte la cantidad de euros que quiere convertir a dolares americanos:</label>
+                    <input type='text' name='dinero' id='euros' value='$miDinero'>
+                <label for='dolar'>Dinero en dolares:</label>
+                    <input type='text' id='dolar' name='dineroCambiado' value='$miDineroCambiado' readonly>
                 <input type='submit'  value='Calcular'/>
             </form>
         ";
