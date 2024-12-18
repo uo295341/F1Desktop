@@ -10,42 +10,53 @@ class DatabaseInitializer {
         $this->connect();
     }
 
-    // Connect to MySQL server without selecting a database
+    // Conectar al servidor MySQL sin seleccionar una base de datos
     private function connect() {
-        $this->conn = new mysqli("localhost", "DBUSER2024", "DBPSWD2024");
-        
+        try {
+            $this->conn = new PDO("mysql:host=localhost", "DBUSER2024", "DBPSWD2024");
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die("Error de conexión: " . $e->getMessage());
+        }
     }
 
-    // Check if the database already exists
+    // Verificar si la base de datos ya existe
     private function databaseExists() {
-        $result = $this->conn->query("SHOW DATABASES LIKE '{$this->dbName}'");
-        return $result && $result->num_rows > 0;
+        $stmt = $this->conn->prepare("SHOW DATABASES LIKE :dbName");
+        $stmt->bindParam(':dbName', $this->dbName);
+        $stmt->execute();
+        return $stmt->rowCount() > 0;
     }
 
-    // Initialize the database using a SQL file
+    // Inicializar la base de datos usando un archivo SQL
     public function initialize($sqlFilePath) {
         if ($this->databaseExists()) {
             return;
         }
 
-        // Read and process the SQL file
-        $sqlScript = file_get_contents($sqlFilePath);
+        // Crear la base de datos
+        $this->conn->exec("CREATE DATABASE IF NOT EXISTS {$this->dbName}");
 
-            $queries = explode(';', $sqlScript);
-            foreach ($queries as $query) {
-                $trimmedQuery = trim($query);
-                if (!empty($trimmedQuery)) {
-                    $this->conn->query($trimmedQuery);
-                }
+        // Seleccionar la base de datos recién creada
+        $this->conn->exec("USE {$this->dbName}");
+
+        // Leer y procesar el archivo SQL
+        $sqlScript = file_get_contents($sqlFilePath);
+        $queries = explode(';', $sqlScript);
+
+        foreach ($queries as $query) {
+            $trimmedQuery = trim($query);
+            if (!empty($trimmedQuery)) {
+                $this->conn->exec($trimmedQuery);
             }
+        }
     }
 
-    // Close the connection
+    // Cerrar la conexión
     public function closeConnection() {
-        $this->conn->close();
+        $this->conn = null;
     }
 }
-
 
 $dbInitializer = new DatabaseInitializer("F1_Desktop");
 $dbInitializer->initialize("database.sql");

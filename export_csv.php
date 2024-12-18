@@ -43,25 +43,26 @@ class ExportToCSV {
     // Function to write data from a single table to the CSV file
     private function writeTableDataToCSV($tableName, $output) {
         $conn = $this->dbConnection->getConnection();
+        
+        // Using PDO to query the table
         $query = "SELECT * FROM $tableName";
-        $result = $conn->query($query);
+        $stmt = $conn->query($query);
 
-        if (!$result) {
-            echo "Error querying table: $tableName<br>" . $conn->error;
+        // Check if the query was successful
+        if (!$stmt) {
+            echo "Error querying table: $tableName<br>";
             return;
         }
 
         // Write column names as the header for this table
-        $columns = $result->fetch_fields();
-        $columnNames = [];
-        foreach ($columns as $column) {
-            $columnNames[] = $column->name;
-        }
-        fputcsv($output, $columnNames);
-
-        // Write each row from the database to the CSV file
-        while ($row = $result->fetch_assoc()) {
-            fputcsv($output, $row);
+        $columns = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($columns) {
+            fputcsv($output, array_keys($columns)); // Write the column names as the header
+            // Write each row from the database to the CSV file
+            $stmt->execute(); // Re-execute the query to fetch rows
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                fputcsv($output, $row);
+            }
         }
     }
 }

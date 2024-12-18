@@ -13,47 +13,45 @@ class CSVImporter {
     }
 
     public function importCSV($table, $filePath) {
-        // Allowed tables
+        // Tables allowed for import
         $allowedTables = ['Equipos', 'Pilotos', 'Carreras', 'Resultados', 'Temporada'];
+        
+        // Check if the table is in the allowed list
         if (!in_array($table, $allowedTables)) {
-            die("<p>❌ Tabla no permitida: '$table'</p>");
+            echo "Table $table is not allowed for import.";
+            return;
         }
 
         // Read the CSV file
         if (($handle = fopen($filePath, "r")) !== FALSE) {
-            $columns = fgetcsv($handle, 1000, ","); // Get column names from the CSV
-            if (!$columns) {
-                die("❌ No se pudieron leer las columnas del archivo CSV.");
-            }
+            // Read the first row for column names
+            $columns = fgetcsv($handle, 1000, ","); 
 
             // Build the SQL query dynamically
             $columnString = implode(", ", $columns);
             $placeholders = implode(", ", array_fill(0, count($columns), "?"));
             $query = "INSERT INTO $table ($columnString) VALUES ($placeholders)";
             
+            // Prepare the statement
             $stmt = $this->conn->prepare($query);
-            
 
             // Insert each row into the database
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                $types = str_repeat("s", count($data)); // Treat all fields as strings
-                $stmt->bind_param($types, ...$data);
+                // Bind the parameters dynamically for each row
+                foreach ($data as $index => $value) {
+                    $stmt->bindValue($index + 1, $value, PDO::PARAM_STR); // Bind each value to its respective placeholder
+                }
                 $stmt->execute();
             }
+
             fclose($handle);
-        } 
+        } else {
+            echo "Failed to open the file.";
+        }
     }
 }
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['csv_file'])) {
-    $table = $_POST['table'];
-    $filePath = $_FILES['csv_file']['tmp_name'];
-
-    $db = (new DBConnection())->getConnection();
-    $importer = new CSVImporter($db);
-    $importer->importCSV($table, $filePath);
-}
 ?>
+
 <!DOCTYPE HTML>
 <html lang="es">
 <head>

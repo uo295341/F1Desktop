@@ -8,24 +8,23 @@ class DBConnection {
     private $conn;
 
     public function __construct() {
-        // Conectar al servidor MySQL sin especificar una base de datos
-        $this->conn = new mysqli($this->server, $this->user, $this->pass);
-
-        // Verificar si la conexión es exitosa
-        if ($this->conn->connect_error) {
-            die("Conexión fallida: " . $this->conn->connect_error);
-        }
-
-        // Crear la base de datos si no existe
-        $sql = "CREATE DATABASE IF NOT EXISTS $this->db";
-        if ($this->conn->query($sql) === TRUE) {
+        try {
+            // Conectar al servidor MySQL sin especificar una base de datos
+            $this->conn = new PDO("mysql:host={$this->server}", $this->user, $this->pass);
             
-        } else {
-            echo "Error al crear la base de datos: " . $this->conn->error . "<br>";
-        }
+            // Establecer el modo de error de PDO a excepción
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Seleccionar la base de datos F1_Desktop
-        $this->conn->select_db($this->db);
+            // Crear la base de datos si no existe
+            $sql = "CREATE DATABASE IF NOT EXISTS {$this->db}";
+            $this->conn->exec($sql);
+
+            // Seleccionar la base de datos F1_Desktop
+            $this->conn->exec("USE {$this->db}");
+        } catch (PDOException $e) {
+            // Si ocurre un error, lo mostramos
+            echo "Error de conexión: " . $e->getMessage();
+        }
     }
 
     // Obtener la conexión para usarla en otros lugares
@@ -35,7 +34,7 @@ class DBConnection {
 
     // Cerrar la conexión
     public function closeConnection() {
-        $this->conn->close();
+        $this->conn = null;
     }
 }
 ?>

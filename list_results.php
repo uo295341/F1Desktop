@@ -40,19 +40,22 @@ class ListResults {
             $query .= " WHERE " . implode(" AND ", $conditions);
         }
 
+        // Preparar la consulta
         $stmt = $this->conn->prepare($query);
 
-        if ($stmt && !empty($params)) {
-            $stmt->bind_param($types, ...$params);
+        // Ejecutar la consulta si tiene parámetros
+        if ($stmt) {
+            if (!empty($params)) {
+                // Vincular los parámetros
+                $paramTypes = str_repeat('s', count($params));
+                $stmt->execute($params);
+            } else {
+                $stmt->execute();
+            }
         }
 
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        $data = [];
-        while ($row = $result->fetch_assoc()) {
-            $data[] = $row;
-        }
+        // Obtener los resultados usando fetchAll()
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
 }
@@ -123,41 +126,25 @@ $results = $listResults->getResults($filters);
         </form>
         <?php
 
-// Incluir la clase de conexión a la base de datos y la clase ListResults
-require_once 'db_connection.php';
-
-$conn = (new DBConnection())->getConnection();
-$listResults = new ListResults($conn);
-
-// Filtrar los resultados según los parámetros de la URL o el formulario
-$filters = [
-    'piloto' => $_GET['piloto'] ?? '',  // Filtro para nombre del piloto
-    'carrera' => $_GET['carrera'] ?? '',  // Filtro para nombre de la carrera
-    'posicion' => $_GET['posicion'] ?? ''  // Filtro para posición
-];
-
-// Obtener los resultados usando el método getResults
-$results = $listResults->getResults($filters);
-
-// Mostrar los resultados
-if ($results) {
-    echo "<table>";
-    echo "<tr><th scope='col' id='Piloto'>Piloto</th>
-    <th scope='col' id='Carrera'>Carrera</th><th scope='col' id='Posicion'>Posición</th>
-    <th scope='col' id='Puntos'>Puntos</th></tr>";
-    foreach ($results as $row) {
-        echo "<tr>";
-        echo "<td headers='Piloto'>" . $row['piloto'] . "</td>";
-        echo "<td headers='Carrera'>" . $row['carrera'] . "</td>";
-        echo "<td headers='Posicion'>" . $row['posicion'] . "</td>";
-        echo "<td headers='Puntos'>" . $row['puntos'] . "</td>";
-        echo "</tr>";
-    }
-    echo "</table>";
-} else {
-    echo "No se encontraron resultados.";
-}
-?>
+        // Mostrar los resultados
+        if ($results) {
+            echo "<table>";
+            echo "<tr><th scope='col' id='Piloto'>Piloto</th>
+            <th scope='col' id='Carrera'>Carrera</th><th scope='col' id='Posicion'>Posición</th>
+            <th scope='col' id='Puntos'>Puntos</th></tr>";
+            foreach ($results as $row) {
+                echo "<tr>";
+                echo "<td headers='Piloto'>" . $row['piloto'] . "</td>";
+                echo "<td headers='Carrera'>" . $row['carrera'] . "</td>";
+                echo "<td headers='Posicion'>" . $row['posicion'] . "</td>";
+                echo "<td headers='Puntos'>" . $row['puntos'] . "</td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "No se encontraron resultados.";
+        }
+        ?>
     </main>
 </body>
 </html>
