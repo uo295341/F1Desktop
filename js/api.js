@@ -203,7 +203,6 @@ class RacingGame {
             const distance = Math.hypot(this.carX - marker.x, this.carY - marker.y);
             if (distance < 10) {
                 this.markersPassed++;
-                console.log(`Passed marker ${i + 1}`);
                 break;
             }
         }

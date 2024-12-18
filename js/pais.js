@@ -19,7 +19,6 @@ class Pais {
         this.gobierno = "República federal constitucional";
         this.religion = "Cristianismo";
         this.coordernadasMeta = "36.109017,-115.162219";
-        console.log(this.urlForecast);
     }
     get getNombreCapital(){
         return "" + this.nombreCapital;

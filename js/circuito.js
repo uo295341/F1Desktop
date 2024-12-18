@@ -61,7 +61,6 @@ leerArchivoTexto(files) {
             unorderedList.innerHTML += "<li>Latitud: " +this.querySelector("puntoFinal").querySelector("latitudPunto").textContent + " " +$(this).find("puntoFinal").find("latitudPunto").attr("unidad") + "</li>";
             unorderedList.innerHTML += "<li>Sector: " +this.querySelector("puntoFinal").querySelector("sector").textContent + "</li>";
             list.append(unorderedList);
-            console.log(list);
             orderedList.append(list);
             
           });

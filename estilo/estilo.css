@@ -48,8 +48,8 @@ main>ol{
 
  /*Especificidad 002*/
 li::marker {
-    color: #033F6D;
-    font-weight: bold;  /*background color en body*/
+    color: #033F6D;/*background color en body*/
+    font-weight: bold;  
     
 }
  /*Especificidad 001*/

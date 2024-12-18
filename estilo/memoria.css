@@ -63,7 +63,7 @@ article img {
     }
     /*Especificidad 001*/
     article {
-        border: 0.2em solid black;
+        border: 0.2em solid black;/*Se redefine border, solid y color para que la visibilidad de las cartas sea mejor en dispositivos pequeños*/
         width: 26vw;/*Se redefine width para que se vean bien las cartas cuando se hace pequeño*/
         height: 18vw;/*Se redefine height para que se vean bien las cartas cuando se hace pequeño*/
     }

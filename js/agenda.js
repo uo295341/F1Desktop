@@ -6,7 +6,6 @@ class Agenda {
     }
 
     cargarCarreras() {
-        console.log(this.url);
         $.ajax({
             url: this.url,  // URL de la API para obtener las carreras de la temporada actual
             method: "GET",
