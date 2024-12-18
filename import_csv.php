@@ -38,7 +38,6 @@ class CSVImporter {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                 $types = str_repeat("s", count($data)); // Treat all fields as strings
                 $stmt->bind_param($types, ...$data);
-                print($data[0]);
                 $stmt->execute();
             }
             fclose($handle);
@@ -95,11 +94,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['csv_file'])) {
         <form action="import_csv.php" method="POST" enctype="multipart/form-data">
             <label for="table">Selecciona una Tabla:</label>
             <select name="table" id="table" required>
-                <option value="Equipos">Equipos</option>
-                <option value="Pilotos">Pilotos</option>
-                <option value="Carreras">Carreras</option>
-                <option value="Resultados">Resultados</option>
-                <option value="Temporada">Temporada</option>
+                <option value="">Escoge una tabla</option>
+                <option>Equipos</option>
+                <option>Pilotos</option>
+                <option>Carreras</option>
+                <option>Resultados</option>
+                <option>Temporada</option>
             </select>
 
             <label for="csv_file">Selecciona un Archivo CSV:</label>

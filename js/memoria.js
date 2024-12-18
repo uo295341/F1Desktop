@@ -118,7 +118,5 @@ class Memoria {
         });
     }
 }
-
-// Inicia el juego creando una instancia de la clase Memoria
-const game = new Memoria();
+var game = new Memoria();
 

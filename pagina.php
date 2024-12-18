@@ -23,8 +23,8 @@
             <a href="calendario.html" title="calendario">Calendario</a>
             <a href="metereología.html" title="meteorología">Meteorología</a>
             <a href="circuito.html" title="circuito">Circuito</a>
-            <a href="viajes.php" title="viajes" class="active">Viajes</a>
-            <a href="juegos.html" title="juegos">Juegos</a>
+            <a href="viajes.php" title="viajes">Viajes</a>
+            <a href="juegos.html" title="juegos" class="active">Juegos</a>
         </nav>
     </header>
     <p>
