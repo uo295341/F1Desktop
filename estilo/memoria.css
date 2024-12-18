@@ -16,7 +16,7 @@ main > *:first-child {
 /*Especificidad 001*/
 article {
     width: 20vw;
-    height: 10vw;
+    height: 12vw;
     border: 0.4em solid black;
     transform: scale(1);
     cursor: pointer;
@@ -65,7 +65,7 @@ article img {
     article {
         border: 0.2em solid black;
         width: 26vw;/*Se redefine width para que se vean bien las cartas cuando se hace pequeño*/
-        height: 16vw;/*Se redefine height para que se vean bien las cartas cuando se hace pequeño*/
+        height: 18vw;/*Se redefine height para que se vean bien las cartas cuando se hace pequeño*/
     }
 }
 @media screen and (max-width: 500px) {
